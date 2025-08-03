@@ -3,31 +3,145 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Invitación con Música Personalizada</title>
+  <title>Invitación de Danna Scarlett</title>
   <style>
     body {
+      margin: 0;
+      padding: 0;
       font-family: 'Arial', sans-serif;
       background: linear-gradient(270deg, #ffd6e0, #d1c4e9, #b2ebf2, #fff9c4, #f8bbd0);
       background-size: 1000% 1000%;
       animation: fondoRapido 10s linear infinite;
       text-align: center;
-      padding: 40px;
+      font-weight: bold;
+      overflow-x: hidden;
     }
+
     @keyframes fondoRapido {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
     }
-    h1 {
+
+    .invitacion {
+      width: 90%;
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 30px;
+      border-radius: 30px;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.4);
+    }
+
+    .titulo-personalizado {
+      font-size: 2.2em;
       color: #f06292;
-      font-size: 2.5em;
-      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px #fff;
     }
-    p {
-      font-size: 1.2em;
-      color: #444;
+
+    .numero-img {
+      width: 80px;
+      vertical-align: middle;
+      animation: salto 1s infinite;
     }
-    .boton {
+
+    @keyframes salto {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+
+    .nombre-animado {
+      font-size: 1.5em;
+      color: #c2185b;
+      animation: zoomNombre 2.5s ease-in-out infinite;
+    }
+
+    @keyframes zoomNombre {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.15); }
+    }
+
+    .info-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .info-boton {
+      border-radius: 12px;
+      padding: 12px 24px;
+      font-size: 1.1em;
+      font-weight: bold;
+      box-shadow: 0 0 12px rgba(255, 255, 255, 0.8);
+      border: none;
+    }
+
+    .info-fecha {
+      background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+    }
+
+    .info-hora {
+      background: linear-gradient(45deg, #a1c4fd, #c2e9fb);
+    }
+
+    .info-lugar {
+      background-color: #80deea;
+    }
+
+    .info-misa {
+      background-color: #ffe082;
+      color: #5d4037;
+    }
+
+    .boton-confirmar {
+      display: inline-block;
+      margin: 25px auto;
+      padding: 14px 30px;
+      font-size: 1.1em;
+      background-color: #a5d6a7;
+      color: #1b5e20;
+      border: none;
+      border-radius: 12px;
+      text-decoration: none;
+      box-shadow: 0 0 15px #a5d6a7;
+      animation: encenderBoton 2s ease-in-out infinite;
+    }
+
+    @keyframes encenderBoton {
+      0%, 100% { box-shadow: 0 0 5px #a5d6a7; }
+      50% { box-shadow: 0 0 25px #66bb6a; }
+    }
+
+    .flecha {
+      font-size: 2.2em;
+      color: #43a047;
+      animation: flechaAnimada 1s infinite alternate;
+    }
+
+    @keyframes flechaAnimada {
+      0% { transform: translateY(0); opacity: 0.6; }
+      100% { transform: translateY(8px); opacity: 1; }
+    }
+
+    #countdown {
+      margin-top: 30px;
+      font-size: 1em;
+      font-weight: bold;
+      color: white;
+      background-color: #ec407a;
+      padding: 10px 20px;
+      border-radius: 14px;
+      box-shadow: 0 0 10px #ff80ab;
+      display: inline-block;
+      max-width: 80%;
+      line-height: 1.4;
+    }
+
+    .boton-musica {
       position: fixed;
       bottom: 20px;
       right: 20px;
@@ -44,16 +158,40 @@
 </head>
 <body>
 
-  <h1>🎉 Invitación de Danna Scarlett 🎵</h1>
-  <p>Haz clic en el botón para reproducir o pausar la música.</p>
+  <div class="invitacion">
+    <img src="https://i.postimg.cc/TY70fGJC/disney-princess-the-walt-disney-company-cinderella-minnie-mouse-mermaid-pink-83a59c87d0e9f6cadaf1ee8.png" alt="Princesas Disney" style="max-width:100%" />
+    
+    <h1 class="titulo-personalizado">
+      Presentación de 
+      <img class="numero-img" src="https://i.postimg.cc/cJZrzttj/minnie-mouse-mickey-mouse-clip-art-numeros-d2919a032135994639966a0cc62c7e88.png" alt="Número 3" />
+      años
+    </h1>
 
-  <!-- 🎵 Música desde GitHub -->
+    <h2 class="nombre-animado">🎀 Danna Scarlett González Flores 🎀</h2>
+
+    <div class="info-container">
+      <div class="info-boton info-fecha"><strong>Fecha:</strong> 20 de julio</div>
+      <div class="info-boton info-hora"><strong>Hora:</strong> 5:00 PM</div>
+    </div>
+
+    <div class="info-boton info-lugar"><strong>Lugar:</strong> Salón de eventos Malika</div>
+    <div class="info-boton info-misa"><strong>Misa:</strong> Iglesia Guadalupana - 12:30 PM</div>
+
+    <div class="flecha">👇</div>
+
+    <a class="boton-confirmar" href="https://wa.link/2qbm9i" target="_blank">Confirmar asistencia</a>
+
+    <div id="countdown">Cargando cuenta regresiva...</div>
+  </div>
+
+  <!-- 🎵 Música -->
   <audio id="musica" loop>
     <source src="felicidades.mp3" type="audio/mpeg">
-    Tu navegador no soporta audio HTML5.
+    Tu navegador no soporta audio.
   </audio>
 
-  <button id="botonPlay" class="boton">▶️ Reproducir música</button>
+  <!-- 🔘 Botón de reproducción -->
+  <button id="botonPlay" class="boton-musica">▶️ Reproducir música</button>
 
   <script>
     const musica = document.getElementById('musica');
@@ -71,6 +209,25 @@
         reproduciendo = false;
       }
     });
+
+    // Cuenta regresiva
+    const fechaEvento = new Date("2025-07-20T17:00:00").getTime();
+    const cuentaRegresiva = setInterval(() => {
+      const ahora = new Date().getTime();
+      const distancia = fechaEvento - ahora;
+      if (distancia <= 0) {
+        clearInterval(cuentaRegresiva);
+        document.getElementById("countdown").innerText = "¡Ya comenzó el evento!";
+        return;
+      }
+      const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
+      const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+      const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
+
+      document.getElementById("countdown").innerText =
+        `Faltan ${dias} días, ${horas} horas, ${minutos} minutos y ${segundos} segundos`;
+    }, 1000);
   </script>
 
 </body>
