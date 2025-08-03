@@ -1,46 +1,255 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>🎉 Felicidades Gimena 🎵</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Invitación de Danna Scarlett</title>
   <style>
-    body { font-family: sans-serif; padding: 20px; background: #f0f0f0; }
-    #karaoke { font-size: 1.3em; margin-top: 20px; background: white; padding: 10px; border-radius: 8px; min-height: 80px; }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(270deg, #ffd6e0, #d1c4e9, #b2ebf2, #fff9c4, #f8bbd0);
+      background-size: 1000% 1000%;
+      animation: fondoRapido 10s linear infinite;
+      text-align: center;
+      font-weight: bold;
+      overflow-x: hidden;
+    }
+    @keyframes fondoRapido {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .invitacion {
+      width: 90%;
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 30px;
+      border-radius: 30px;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.4);
+      z-index: 2;
+      position: relative;
+    }
+    .titulo-personalizado {
+      font-size: 2.2em;
+      color: #f06292;
+      text-shadow: 2px 2px 4px #fff;
+      font-weight: 700;
+      margin-bottom: 0.3em;
+    }
+    .numero-img {
+      width: 80px;
+      height: auto;
+      vertical-align: middle;
+      animation: salto 1s infinite;
+    }
+    @keyframes salto {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+    .nombre-animado {
+      font-size: 1.5em;
+      color: #c2185b;
+      animation: zoomNombre 2.5s ease-in-out infinite;
+    }
+    @keyframes zoomNombre {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.15); }
+    }
+    .info-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .info-boton {
+      border-radius: 12px;
+      padding: 12px 24px;
+      font-size: 1.1em;
+      font-weight: bold;
+      box-shadow: 0 0 12px rgba(255, 255, 255, 0.8);
+      border: none;
+    }
+    .info-fecha {
+      background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+    }
+    .info-hora {
+      background: linear-gradient(45deg, #a1c4fd, #c2e9fb);
+    }
+    .info-lugar {
+      background-color: #80deea;
+    }
+    .info-misa {
+      background-color: #ffe082;
+      color: #5d4037;
+    }
+    .boton-confirmar {
+      display: inline-block;
+      margin: 25px auto;
+      padding: 14px 30px;
+      font-size: 1.1em;
+      background-color: #a5d6a7;
+      color: #1b5e20;
+      border: none;
+      border-radius: 12px;
+      text-decoration: none;
+      box-shadow: 0 0 15px #a5d6a7;
+      animation: encenderBoton 2s ease-in-out infinite;
+    }
+    @keyframes encenderBoton {
+      0%, 100% { box-shadow: 0 0 5px #a5d6a7; }
+      50% { box-shadow: 0 0 25px #66bb6a; }
+    }
+    .flecha {
+      font-size: 2.2em;
+      color: #43a047;
+      animation: flechaAnimada 1s infinite alternate;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+    @keyframes flechaAnimada {
+      0% { transform: translateY(0); opacity: 0.6; }
+      100% { transform: translateY(8px); opacity: 1; }
+    }
+    #countdown {
+      margin-top: 30px;
+      font-size: 1em;
+      font-weight: bold;
+      color: white;
+      background-color: #ec407a;
+      padding: 10px 20px;
+      border-radius: 14px;
+      box-shadow: 0 0 10px #ff80ab;
+      display: inline-block;
+      max-width: 80%;
+      line-height: 1.4;
+    }
+    .minnie-caminando {
+      position: fixed;
+      bottom: 10px;
+      width: 70px;
+      height: auto;
+      animation: caminar 8s linear infinite alternate;
+      z-index: 1;
+      pointer-events: none;
+    }
+    @keyframes caminar {
+      0% { left: 0; transform: scaleX(1); }
+      50% { left: calc(100% - 100px); transform: scaleX(1); }
+      51% { transform: scaleX(-1); }
+      100% { left: 0; transform: scaleX(-1); }
+    }
+    .burbujas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 0;
+      pointer-events: none;
+    }
+    .burbuja {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.25;
+      animation: flotar 8s infinite ease-in-out;
+    }
+    @keyframes flotar {
+      0% { transform: translateY(100vh) scale(0.5); }
+      100% { transform: translateY(-10vh) scale(1.2); }
+    }
   </style>
 </head>
 <body>
 
-  <h1>🎂 ¡Felicidades Gimena! 🎶</h1>
+  <!-- 🎈 Fondo animado de burbujas -->
+  <div class="burbujas">
+    <div class="burbuja" style="width:60px; height:60px; left:10%; background:#ff80ab; animation-delay:0s;"></div>
+    <!-- ... puedes copiar más burbujas aquí ... -->
+  </div>
 
-  <!-- Reproductor de Audio -->
-  <audio id="audio" controls>
-    <source src="felicidades.mp3" type="audio/mp3">
-    Tu navegador no soporta audio HTML5.
+  <!-- 🏰 Tarjeta de invitación -->
+  <div class="invitacion">
+    <img src="https://i.postimg.cc/TY70fGJC/disney-princess-the-walt-disney-company-cinderella-minnie-mouse-mermaid-pink-83a59c87d0e9f6cadaf1ee8.png" alt="Princesas Disney" />
+    <h1 class="titulo-personalizado">
+      Presentación de 
+      <img class="numero-img" src="https://i.postimg.cc/cJZrzttj/minnie-mouse-mickey-mouse-clip-art-numeros-d2919a032135994639966a0cc62c7e88.png" alt="Número 3" />
+      años
+    </h1>
+
+    <h2 class="nombre-animado">🎀 Danna Scarlett González Flores 🎀</h2>
+
+    <div class="info-container">
+      <div class="info-boton info-fecha"><strong>Fecha:</strong> 20 de julio</div>
+      <div class="info-boton info-hora"><strong>Hora:</strong> 5:00 PM</div>
+    </div>
+    <div class="info-boton info-lugar"><strong>Lugar:</strong> Salón de eventos Malika</div>
+    <div class="info-boton info-misa"><strong>Misa:</strong> Iglesia Guadalupana - 12:30 PM</div>
+
+    <div class="flecha">👇</div>
+
+    <a class="boton-confirmar" href="https://wa.link/2qbm9i" target="_blank" onclick="reproducirEfecto()">Confirmar asistencia</a>
+
+    <div id="countdown">Cargando cuenta regresiva...</div>
+  </div>
+
+  <!-- Minnie animada caminando -->
+  <img src="https://i.postimg.cc/P53pc5hQ/minnie-mouse-mickey-mouse-daisy-duck-clip-art-minnie-mouse-png-transparent-21f326e1004f5a8c04f08aabc.png" class="minnie-caminando" />
+
+  <!-- 🎵 Música -->
+  <audio id="musica" loop>
+    <source src="https://cdn.glitch.global/cf182a19-dedd-4206-9722-295f8080791d/Feliz_%20Feliz%20Cumpleaños%20🎂🎉%20_%20Disney(MP3_160K).mp3?v=1751780238006" type="audio/mpeg">
+    Tu navegador no soporta audio.
   </audio>
 
-  <!-- Texto sincronizado -->
-  <div id="karaoke"></div>
+  <button id="botonPlay" style="position:fixed;bottom:20px;right:20px;padding:15px 25px;font-size:1.2em;background-color:#f06292;color:white;border:none;border-radius:8px;box-shadow:0 0 10px #f06292;cursor:pointer;">
+    ▶️ Reproducir música
+  </button>
 
   <script>
-    const audio = document.getElementById("audio");
-    const karaoke = document.getElementById("karaoke");
-    let segmentos = [];
+    const musica = document.getElementById('musica');
+    const botonPlay = document.getElementById('botonPlay');
+    let reproduciendo = false;
 
-    // Carga el JSON
-    fetch("Felicidades Gimena.json")
-      .then(res => res.json())
-      .then(data => {
-        segmentos = data.segments;
-      });
-
-    // Sincroniza texto con el tiempo
-    audio.ontimeupdate = () => {
-      const tiempo = audio.currentTime;
-      const actual = segmentos.find(seg => tiempo >= seg.start && tiempo <= seg.end);
-      if (actual) {
-        karaoke.textContent = actual.text;
+    botonPlay.addEventListener('click', () => {
+      if (!reproduciendo) {
+        musica.play();
+        botonPlay.textContent = '⏸️ Pausar música';
+        reproduciendo = true;
+      } else {
+        musica.pause();
+        botonPlay.textContent = '▶️ Reproducir música';
+        reproduciendo = false;
       }
-    };
+    });
+
+    function reproducirEfecto() {
+      if (navigator.vibrate) navigator.vibrate([80, 40, 80]);
+    }
+
+    const fechaEvento = new Date("2025-07-20T17:00:00").getTime();
+    const cuentaRegresiva = setInterval(() => {
+      const ahora = new Date().getTime();
+      const distancia = fechaEvento - ahora;
+      if (distancia <= 0) {
+        clearInterval(cuentaRegresiva);
+        document.getElementById("countdown").innerHTML = "¡Ya comenzó el evento!";
+        return;
+      }
+      const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
+      const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+      const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
+
+      document.getElementById("countdown").innerHTML =
+        `Faltan ${dias} días, ${horas} horas, ${minutos} minutos y ${segundos} segundos`;
+    }, 1000);
   </script>
 
 </body>
