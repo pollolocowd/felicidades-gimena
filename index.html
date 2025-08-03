@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>🎉 Felicidades Gimena 🎵</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; background: #f0f0f0; }
+    #karaoke { font-size: 1.3em; margin-top: 20px; background: white; padding: 10px; border-radius: 8px; min-height: 80px; }
+  </style>
+</head>
+<body>
+
+  <h1>🎂 ¡Felicidades Gimena! 🎶</h1>
+
+  <!-- Reproductor de Audio -->
+  <audio id="audio" controls>
+    <source src="felicidades.mp3" type="audio/mp3">
+    Tu navegador no soporta audio HTML5.
+  </audio>
+
+  <!-- Texto sincronizado -->
+  <div id="karaoke"></div>
+
+  <script>
+    const audio = document.getElementById("audio");
+    const karaoke = document.getElementById("karaoke");
+    let segmentos = [];
+
+    // Carga el JSON
+    fetch("Felicidades Gimena.json")
+      .then(res => res.json())
+      .then(data => {
+        segmentos = data.segments;
+      });
+
+    // Sincroniza texto con el tiempo
+    audio.ontimeupdate = () => {
+      const tiempo = audio.currentTime;
+      const actual = segmentos.find(seg => tiempo >= seg.start && tiempo <= seg.end);
+      if (actual) {
+        karaoke.textContent = actual.text;
+      }
+    };
+  </script>
+
+</body>
+</html>
